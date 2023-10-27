@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: {{ template "dev.fullname" . }}
+  name: {{ template "prod.fullname" . }}
   labels:
-    app: {{ template "dev.name" . }}
-    chart: {{ template "dev.chart" . }}
+    app: {{ template "prod.name" . }}
+    chart: {{ template "prod.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
@@ -18,12 +18,12 @@ spec:
         - pause: {duration: 15}
   selector:
     matchLabels:
-      app: {{ template "dev.name" . }}
+      app: {{ template "prod.name" . }}
       release: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: {{ template "dev.name" . }}
+        app: {{ template "prod.name" . }}
         release: {{ .Release.Name }}
     spec:
       containers:
