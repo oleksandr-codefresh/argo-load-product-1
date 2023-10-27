@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "h-gs.fullname" . }}
+  name: {{ template "hgs.fullname" . }}
   labels:
-    app: {{ template "h-gs.name" . }}
-    chart: {{ template "h-gs.chart" . }}
+    app: {{ template "hgs.name" . }}
+    chart: {{ template "hgs.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
@@ -15,5 +15,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: {{ template "h-gs.name" . }}
+    app: {{ template "hgs.name" . }}
     release: {{ .Release.Name }}
