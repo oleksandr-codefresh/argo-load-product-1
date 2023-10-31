@@ -11,6 +11,9 @@ spec:
   progressDeadlineSeconds: 60
   replicas: {{ .Values.replicaCount }}
   revisionHistoryLimit: 2
+  analysis:
+    successfulRunHistoryLimit: 1
+    unsuccessfulRunHistoryLimit: 1
   strategy:
     canary:
       steps:
