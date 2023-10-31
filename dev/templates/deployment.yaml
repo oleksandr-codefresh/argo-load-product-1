@@ -15,6 +15,9 @@ spec:
     canary:
       steps:
         - setWeight: 50
+        - analysis:
+            templates:
+            - templateName: {{ template "dev.fullname" . }}
         - pause: {duration: 15}
   selector:
     matchLabels:
