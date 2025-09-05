@@ -1,8 +1,8 @@
 replicaCount: 1
 image:
   repository: xeonalex/guesbook
-  tag: '0.3'
-  pullPolicy: Always
+  tag: '0.2'
+  pullPolicy: IfNotPresent
 service:
   type: ClusterIP
   port: 80
